@@ -2,6 +2,9 @@
 
 A jQuery plugin to display a countdown timer.
 
+<h3>Demo</h3>
+<a href="http://spedwards.github.io/projects/countdown/">Countdown</a>
+
 <h2>Usage</h2>
 
 <p>The syntax is very simple. Just use</p>
