@@ -41,6 +41,7 @@
 		$.fn.countdown.check('num', opts.minutes, 0);
 		$.fn.countdown.check('num', opts.seconds, 0);
 		$.fn.countdown.check('num', opts.milliseconds, 0);
+		$.fn.countdown.check('function', opts.done, function(){});
 		$.fn.countdown.check('bool', opts.reverse, false);
 		
 		opts.hours = opts.hours + $.fn.countdown.splitHoursMinutes(opts.minutes)[0];
@@ -127,6 +128,12 @@
 			}
 		} else if (type == 'bool') {
 			if (typeof opt === 'boolean') {
+				return opt;
+			} else {
+				return def;
+			}
+		} else if (type == 'function') {
+			if (typeof opt === type) {
 				return opt;
 			} else {
 				return def;
