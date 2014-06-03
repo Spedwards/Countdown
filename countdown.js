@@ -94,7 +94,6 @@
 			}
 		}, 10 );
 		
-		$.fn.countdown.returnData(opts);
 		return this;
 	};
 	
@@ -134,12 +133,6 @@
 			}
 		} else {
 			return def;
-		}
-	}
-	
-	$.fn.countdown.returnData = function () {
-		for (var i = 0; i < arguments.length; i++) {
-			console.log(arguments[i]);
 		}
 	}
 	
