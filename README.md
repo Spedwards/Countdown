@@ -1,4 +1,4 @@
-<h1>Get Browser</h1>
+<h1>Countdown</h1>
 
 A jQuery plugin to display a countdown timer.
 
