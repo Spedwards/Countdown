@@ -21,6 +21,9 @@ A jQuery plugin to display a countdown timer.
 	minutes : 0,
 	seconds : 0,
 	milliseconds : 0,
+							
+	// function to run when done
+	done : function(){},
 	
 	// whether to count down or up
 	reverse : false
