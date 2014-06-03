@@ -59,6 +59,7 @@
 					if (iMin == 0) {
 						if (iH == 0) {
 							// DONE
+							opts.done();
 							milliseconds.text(0);
 							clearInterval(count);
 						} else {
@@ -77,7 +78,7 @@
 					iMil = 999;
 				}
 			} else {
-				iMil-=4; // Make up for ms lost doing calculations
+				iMil-=10;
 			}
 			hours.text(iH);
 			minutes.text(iMin);
@@ -91,8 +92,9 @@
 			} else {
 				milliseconds.text(iMil);
 			}
-		}, 1 );
+		}, 10 );
 		
+		$.fn.countdown.returnData(opts);
 		return this;
 	};
 	
@@ -101,6 +103,7 @@
 		minutes : 0,
 		seconds : 0,
 		milliseconds : 0,
+		done : function(){},
 		reverse : false
 	};
 	
@@ -109,7 +112,7 @@
 	}
 	
 	$.fn.countdown.splitMinutesSeconds = function (inp) {
-		return [+(inp/60+'').split('.')[0], inp%60]; // [minutes, seconds];
+		return [Math.floor(inp/60), inp%60]; // [minutes, seconds];
 	}
 	
 	$.fn.countdown.splitHoursMinutes = function (inp) {
@@ -131,6 +134,12 @@
 			}
 		} else {
 			return def;
+		}
+	}
+	
+	$.fn.countdown.returnData = function () {
+		for (var i = 0; i < arguments.length; i++) {
+			console.log(arguments[i]);
 		}
 	}
 	
